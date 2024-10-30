@@ -9,5 +9,6 @@ function merge<T, U>(objA: T, objB: U): T & U {
 
 const mergedObject = merge({ name: "Alice" }, { age: 30 });
 
-console.log(mergedObject);
+// console.log(mergedObject);  // {name: 'Alice', age: 30}
+
 export {};

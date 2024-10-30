@@ -14,20 +14,22 @@
 //   }
 // }
 
-interface ICompnent<T> {
-  props: {
-    title: T;
-  };
+interface IComponent {
+  title: string;
 }
 
-class Component<T> implements ICompnent<T> {
-  constructor(public props: T) {}
+class Component<IComponent>{
+  constructor(public props: IComponent) { }
+  getInf() {
+    console.log("component", this.props)
+  }
 }
 
-class Page<T> extends Component<T> {
+class Page extends Component<IComponent> {
   pageInfo() {
     console.log(this.props.title);
   }
 }
-
+// const page = new Page({ title: "Title" })
+// page.pageInfo(); // Title
 export {};
